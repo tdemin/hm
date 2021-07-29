@@ -1,0 +1,106 @@
+{
+    "breadcrumbs.enabled": false,
+    "diffEditor.renderSideBySide": false,
+    "editor.fontFamily": "'FiraCode NF'",
+    "editor.fontSize": 14,
+    "editor.insertSpaces": true,
+    "editor.fontLigatures": true,
+    "editor.suggestSelection": "first",
+    "editor.renderWhitespace": "boundary",
+    "editor.minimap.side": "left",
+    "editor.rulers": [
+        72,
+        80
+    ],
+    "editor.tabCompletion": "onlySnippets",
+    "editor.minimap.enabled": false,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.openEditors.visible": 15,
+    "files.eol": "\n",
+    "files.autoGuessEncoding": false,
+    "files.autoSaveDelay": 30000,
+    "files.insertFinalNewline": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/node_modules": true,
+        "**/__pycache__": true
+    },
+    "git.alwaysSignOff": false,
+    "git.countBadge": "all",
+    "git.enableCommitSigning": true,
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "git.suggestSmartCommit": false,
+    "search.useGlobalIgnoreFiles": true,
+    "search.useIgnoreFiles": true,
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+    "terminal.integrated.allowChords": true,
+    "terminal.integrated.windowsEnableConpty": true,
+    "terminal.integrated.letterSpacing": 0,
+    // "terminal.integrated.shell.linux": "zsh",
+    // "terminal.integrated.shellArgs.linux": [
+    //     "-i"
+    // ],
+    // "terminal.integrated.shellArgs.windows": [
+    //     "-NoProfile"
+    // ],
+    "terminal.integrated.drawBoldTextInBrightColors": false,
+    "window.menuBarVisibility": "classic",
+    "window.titleBarStyle": "custom",
+    "window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
+    "workbench.settings.editor": "json",
+    "workbench.enableExperiments": false,
+    "workbench.sideBar.location": "right",
+    "workbench.startupEditor": "readme",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Atom One Light",
+    "workbench.activityBar.visible": true,
+    "zenMode.centerLayout": true,
+    "zenMode.hideActivityBar": false,
+    "zenMode.hideStatusBar": false,
+    "zenMode.hideLineNumbers": false,
+    "zenMode.hideTabs": false,
+    "zenMode.restore": false,
+    // programming languages
+    "go.autocompleteUnimportedPackages": true,
+    "go.useLanguageServer": true,
+    "python.workspaceSymbols.enabled": true,
+    "todo-tree.general.statusBar": "total",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    // extensions
+    "bookmarks.navigateThroughAllFiles": true,
+    "todo-tree.tree.showScanModeButton": false,
+    "todo-tree.highlights.enabled": true,
+    "latex-workshop.message.update.show": false,
+    "latex-workshop.view.pdf.viewer": "tab",
+    "liveServer.settings.donotShowInfoMsg": true,
+    // Microsoft crap
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "workbench.settings.enableNaturalLanguageSearch": false,
+    "github.gitAuthentication": false,
+    "typescript.surveys.enabled": false,
+    "extensions.ignoreRecommendations": true,
+    "python.showStartPage": false,
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "redhat.telemetry.enabled": false
+}
