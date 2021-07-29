@@ -1,5 +1,7 @@
-params: ''
-${params.lib.optional (params.data.machine == "haseul") "
+params: let
+    optional = condition: ifTrue: params.lib.optionalElse condition ifTrue "";
+in ''
+${optional (params.data.machine == "haseul") "
 hash -d lts=/data/media
 hash -d lts2=/data/media2
 hash -d lts3=/data/media3
