@@ -18,7 +18,9 @@ in rec {
   manual.html.enable = true;
   manual.manpages.enable = true;
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
+    "corefonts"
+  ];
   home.packages = with pkgs; [
     # tools
     ansible
@@ -76,6 +78,8 @@ in rec {
     ubuntu_font_family
   ];
   home.extraOutputsToInstall = [ "doc" ];
+
+  fonts.fontconfig.enable = true;
 
   systemd.user.services = {
     shadowsocks-rust = {
