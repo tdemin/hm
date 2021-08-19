@@ -40,6 +40,7 @@ in rec {
     graphviz
     jq
     gomplate
+    maim
     minisign
     mksh
     mpris-scrobbler
@@ -57,6 +58,8 @@ in rec {
     tor
     torsocks
     vim
+    xclip
+    xdotool
     yarn
     youtube-dl
     zsh
