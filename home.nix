@@ -23,6 +23,7 @@ in rec {
   ];
   home.packages = with pkgs; [
     # tools
+    android-tools
     ansible
     age
     amfora
@@ -109,4 +110,8 @@ in rec {
       };
     };
   };
+
+  home.file.".local/share/nvim/site/autoload/plug.vim".source =
+    "${builtins.fetchurl
+      "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"}";
 }
