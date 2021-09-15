@@ -34,6 +34,7 @@ in rec {
     fzf
     fd
     hugo
+    gh
     go
     golangci-lint
     goreleaser
