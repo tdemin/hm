@@ -27,6 +27,7 @@ in rec {
     ansible
     age
     amfora
+    asdf-vm
     bat
     chezmoi
     direnv
