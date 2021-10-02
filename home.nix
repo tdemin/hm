@@ -60,6 +60,7 @@ in rec {
     tmux
     tor
     torsocks
+    vagrant
     vim
     xclip
     xdotool
