@@ -42,6 +42,7 @@ in rec {
     go-task
     graphviz
     jq
+    jupyter
     gomplate
     maim
     minisign
