@@ -27,6 +27,7 @@ in rec {
     ansible
     age
     amfora
+    aria2
     asdf-vm
     bat
     chezmoi
