@@ -25,6 +25,7 @@ in rec {
     # tools
     android-tools
     ansible
+    ansible-lint
     age
     amfora
     aria2
