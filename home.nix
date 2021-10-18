@@ -69,6 +69,7 @@ in rec {
     xdotool
     yarn
     youtube-dl
+    zathura
     zsh
   ] ++ [
     # fonts
