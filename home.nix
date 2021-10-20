@@ -23,6 +23,7 @@ in rec {
   ];
   home.packages = with pkgs; [
     # tools
+    act
     android-tools
     ansible
     ansible-lint
