@@ -35,8 +35,9 @@ in rec {
     chezmoi
     direnv
     docker-compose
-    fzf
     fd
+    ffmpeg
+    fzf
     hugo
     gh
     go
