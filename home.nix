@@ -71,6 +71,7 @@ in rec {
     xdotool
     yarn
     youtube-dl
+    yt-dlp
     zathura
     zsh
   ] ++ [
