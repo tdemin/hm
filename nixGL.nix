@@ -1,8 +1,5 @@
 { pkgs, ... }: rec {
-  package = builtins.fetchTarball {
-    url = https://github.com/guibou/nixGL/archive/master.tar.gz;
-  };
-  nixGL = (pkgs.callPackage "${package}/nixGL.nix" {}).nixGLIntel;
+  nixGL = (import <nixgl>).nixGLIntel;
   wrapGL = binaryName: path:
     pkgs.writeShellScriptBin "${binaryName}" ''
       ${nixGL}/bin/nixGLIntel ${path} "$@"
