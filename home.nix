@@ -1,3 +1,6 @@
+# home-manager https://github.com/nix-community/home-manager/archive/master.tar.gz
+# nixgl https://github.com/guibou/nixGL/archive/main.tar.gz
+# nixpkgs https://nixos.org/channels/nixpkgs-unstable
 {
   config,
   pkgs,
