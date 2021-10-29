@@ -56,6 +56,7 @@ in rec {
     mksh
     mpris-scrobbler
     neovim
+    restic
     ripgrep
     rkdeveloptool
     rustup
