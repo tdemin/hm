@@ -27,11 +27,12 @@ in rec {
   home.packages = with pkgs; [
     # tools
     act
+    age
+    amfora
     android-tools
     ansible
     ansible-lint
-    age
-    amfora
+    argo
     aria2
     asdf-vm
     bat
@@ -48,10 +49,15 @@ in rec {
     goreleaser
     go-task
     graphviz
+    istioctl
     jq
     jupyter
     gomplate
+    k3s
+    kompose
+    kubectl
     maim
+    minikube
     minisign
     mksh
     mpris-scrobbler
