@@ -33,6 +33,7 @@ in rec {
     ansible
     ansible-lint
     argo
+    argocd
     aria2
     asdf-vm
     bat
@@ -56,6 +57,7 @@ in rec {
     k3s
     kompose
     kubectl
+    kubernetes-helm
     maim
     minikube
     minisign
