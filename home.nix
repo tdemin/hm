@@ -136,4 +136,10 @@ in rec {
   home.file.".local/share/nvim/site/autoload/plug.vim".source =
     "${builtins.fetchurl
       "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"}";
+  home.file.".local/share/zsh/zsh-syntax-highlighting".source =
+    "${builtins.fetchGit {
+          url = "https://github.com/zsh-users/zsh-syntax-highlighting.git";
+          ref = "master";
+      }
+    }";
 }
