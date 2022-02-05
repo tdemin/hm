@@ -1,0 +1,102 @@
+{
+  "nodes": {
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1643933104,
+        "narHash": "sha256-NZPuFxRsZKN8pjRuHPpzlMyt6JQhcjiduBG8bMghSjE=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "63dccc4e60422c1db2c3929b2fd1541f36b7e664",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "master",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nixGL": {
+      "locked": {
+        "lastModified": 1644013836,
+        "narHash": "sha256-8J6HqBr8+JlZzjyMV8FrCS6ZI6rHo1pTMPilSBf6TaE=",
+        "owner": "guibou",
+        "repo": "nixGL",
+        "rev": "17658df1e17a64bc23ee5c93cfa9e8b663a4ac81",
+        "type": "github"
+      },
+      "original": {
+        "owner": "guibou",
+        "ref": "main",
+        "repo": "nixGL",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1643653624,
+        "narHash": "sha256-+8hLMsQrZ2rkvcEtEId6HMe8GPxVb5ga+Vh1fdsqJDU=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "a529f0c125a78343b145a8eb2b915b0295e4f459",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "home-manager": "home-manager",
+        "nixGL": "nixGL",
+        "nixpkgs": "nixpkgs",
+        "vim-plug": "vim-plug",
+        "zsh-syntax-highlighting": "zsh-syntax-highlighting"
+      }
+    },
+    "vim-plug": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1641218708,
+        "narHash": "sha256-6HVwA69fXZ7KkZFbSr+hOZ2epkQoT1BBN6HYMGxTzy0=",
+        "owner": "junegunn",
+        "repo": "vim-plug",
+        "rev": "e300178a0e2fb04b56de8957281837f13ecf0b27",
+        "type": "github"
+      },
+      "original": {
+        "owner": "junegunn",
+        "ref": "master",
+        "repo": "vim-plug",
+        "type": "github"
+      }
+    },
+    "zsh-syntax-highlighting": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1643622897,
+        "narHash": "sha256-Nso9E+yDbjO8F4O8ggukepj4OTpUmOfnPtRArzS1x1Y=",
+        "owner": "zsh-users",
+        "repo": "zsh-syntax-highlighting",
+        "rev": "c10808ad5f3ace0696f900b9c543172bc1f8e27c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "zsh-users",
+        "ref": "master",
+        "repo": "zsh-syntax-highlighting",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
