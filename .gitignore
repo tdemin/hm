@@ -1,6 +1,1 @@
-# format:
-# {
-#  machine = "hostname";
-#  os = "NixOS / Ubuntu / etc";
-# }
-/os.nix
+/result
