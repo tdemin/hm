@@ -17,3 +17,8 @@ create_nix_tmpdir () {
     echo "Creating Nix temporary dir..."
     cmd mkdir -p "$nix_tmpdir"
 }
+
+source_nix_profile () {
+    # TODO: find out if .nix-profile can be located elsewhere
+    source "${HOME}/.nix-profile/etc/profile.d/nix.sh"
+}

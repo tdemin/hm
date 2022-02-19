@@ -23,11 +23,6 @@ extra-experimental-features = nix-command flakes
 EOF
 }
 
-source_nix_profile () {
-    # TODO: find out if .nix-profile can be located elsewhere
-    source "${HOME}/.nix-profile/etc/profile.d/nix.sh"
-}
-
 build_activate_generation () {
     result_path="$hm_path/result"
     echo "Building the profile..."
