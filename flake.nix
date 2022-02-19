@@ -18,14 +18,9 @@
             stateVersion = "21.11";
             genericConfiguration = { username, homeDirectory, system }:
                 home-manager.lib.homeManagerConfiguration {
-                    system = system;
-                    homeDirectory = homeDirectory;
-                    username = username;
-                    stateVersion = stateVersion;
+                    inherit system homeDirectory username stateVersion;
                     extraSpecialArgs = {
-                        nixGL = nixGL;
-                        vim-plug = vim-plug;
-                        zsh-syntax-highlighting = zsh-syntax-highlighting;
+                        inherit nixGL vim-plug zsh-syntax-highlighting;
                     };
                     configuration = { config, pkgs, ... }: {
                         programs.home-manager.enable = true;
@@ -43,6 +38,7 @@
         in {
             "tdemin@haseul" = genericFedoraConfiguration;
             "tdemin@yeojin" = genericFedoraConfiguration;
+            # append new computer configurations here
         };
     };
 }
