@@ -2,24 +2,8 @@
 
 set -euo pipefail
 
-nix_install_url="https://nixos.org/nix/install"
-
-nix_config_file=${XDG_CONFIG_HOME:-$HOME/.config}/nix/nix.conf
-nix_tmpdir=${XDG_CACHE_HOME:-$HOME/.cache}/nix-build
-
-die () {
-    echo "$@" 1>&2
-    exit 1
-}
-
-usage () {
-    die "Usage: $0 [-i]"
-}
-
-cmd () {
-    echo "/usr/bin/env $@"
-    /usr/bin/env $@
-}
+hm_path=$(dirname "$(realpath -s $0)")
+source "$hm_path/common.sh"
 
 install_nix () {
     echo "Installing Nix package manager..."
@@ -45,7 +29,6 @@ source_nix_profile () {
 }
 
 build_activate_generation () {
-    hm_path=$(dirname "$(realpath -s $0)")
     result_path="$hm_path/result"
     echo "Building the profile..."
     cmd TMPDIR="$nix_tmpdir" nix build \
@@ -55,9 +38,8 @@ build_activate_generation () {
     cmd sh "$result_path/activate"
 }
 
-create_nix_tmpdir () {
-    echo "Creating Nix temporary dir..."
-    cmd mkdir -p "$nix_tmpdir"
+usage () {
+    die "Usage: $0 [-i]"
 }
 
 main () {
