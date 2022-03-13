@@ -63,6 +63,7 @@ in rec {
         mksh
         mpris-scrobbler
         neovim
+        patchelf
         restic
         ripgrep
         rkdeveloptool
