@@ -68,14 +68,11 @@ in rec {
         rkdeveloptool
         rustup
         scc
-        shadowsocks-rust
         shellcheck
         socat
         starship
         texlive.combined.scheme-full
         tmux
-        tor
-        torsocks
         vagrant
         vim
         xclip
@@ -106,31 +103,7 @@ in rec {
 
     fonts.fontconfig.enable = true;
 
-    systemd.user.services = {
-        shadowsocks-rust = {
-            Unit = {
-                Description = "Lightweight SOCKS5 proxy";
-            };
-            Service = {
-                ExecStart = "${pkgs.shadowsocks-rust}/bin/sslocal --config %h/.config/shadowsocks-rust/config.json";
-            };
-            Install = {
-                WantedBy = ["default.target"];
-            };
-        };
-        tor = {
-            Unit = {
-                Description = "The Onion Router";
-                Documentation = "man:tor";
-            };
-            Service = {
-                ExecStart = "${pkgs.tor}/bin/tor";
-            };
-            Install = {
-                WantedBy = ["default.target"];
-            };
-        };
-    };
+    systemd.user.services = {};
 
     home.file.".local/share/nvim/site/autoload/plug.vim".source =
         "${vim-plug}/plug.vim";
