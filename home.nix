@@ -70,6 +70,7 @@ in rec {
         rustup
         scc
         shellcheck
+        shfmt
         socat
         starship
         texlive.combined.scheme-full
