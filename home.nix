@@ -71,6 +71,7 @@ in rec {
         scc
         shellcheck
         shfmt
+        skopeo
         socat
         starship
         texlive.combined.scheme-full
