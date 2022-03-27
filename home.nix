@@ -36,6 +36,7 @@ in rec {
         aria2
         asdf-vm
         bat
+        buildah
         chezmoi
         direnv
         docker-compose
