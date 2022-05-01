@@ -91,7 +91,7 @@ in rec {
         corefonts
         dejavu_fonts
         liberation_ttf
-        mplus-outline-fonts
+        mplus-outline-fonts.osdnRelease
         nerdfonts
         noto-fonts
         noto-fonts-cjk
