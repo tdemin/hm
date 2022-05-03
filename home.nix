@@ -13,6 +13,7 @@ let
             ${nixGL.nixGLIntel}/bin/nixGLIntel ${path} "$@"
         '';
     overrides = {
+        akm = pkgs.callPackage ./packages/akm {};
         rescrobbled = pkgs.callPackage ./packages/rescrobbled {};
     };
 in rec {
@@ -27,6 +28,7 @@ in rec {
         # tools
         act
         age
+        overrides.akm
         amfora
         android-tools
         ansible
