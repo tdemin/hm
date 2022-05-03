@@ -58,8 +58,6 @@ in rec {
         gomplate
         k3s
         kompose
-        kubectl
-        kubernetes-helm
         maim
         minikube
         minisign
@@ -104,7 +102,15 @@ in rec {
         roboto-mono
         source-sans-pro
         ubuntu_font_family
-    ];
+    ] ++ (builtins.attrValues
+        (builtins.mapAttrs (package: version: pkgs."${package}".overrideAttrs (_: rec {
+            inherit version;
+        })) {
+            # TODO: this is useless for actually fixing dependencies
+            "kubectl" = "1.23.5";
+            "kubernetes-helm" = "3.8.1";
+        }
+    ));
     home.extraOutputsToInstall = [ "doc" ];
 
     fonts.fontconfig.enable = true;
