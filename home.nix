@@ -4,6 +4,7 @@
 
     vim-plug,
     zsh-syntax-highlighting,
+    k8s,
     ...
 }:
 
@@ -56,8 +57,6 @@ in rec {
         jq
         jupyter
         gomplate
-        k3s
-        kompose
         maim
         minikube
         minisign
@@ -102,15 +101,11 @@ in rec {
         roboto-mono
         source-sans-pro
         ubuntu_font_family
-    ] ++ (builtins.attrValues
-        (builtins.mapAttrs (package: version: pkgs."${package}".overrideAttrs (_: rec {
-            inherit version;
-        })) {
-            # TODO: this is useless for actually fixing dependencies
-            "kubectl" = "1.23.5";
-            "kubernetes-helm" = "3.8.1";
-        }
-    ));
+    ] ++ [
+        k8s.kubernetes-helm
+        k8s.kubectl
+        k8s.helmfile
+    ];
     home.extraOutputsToInstall = [ "doc" ];
 
     fonts.fontconfig.enable = true;

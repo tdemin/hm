@@ -58,11 +58,28 @@
         "type": "github"
       }
     },
+    "nixpkgsK8s": {
+      "locked": {
+        "lastModified": 1653335222,
+        "narHash": "sha256-iB8j9wzc6e+YUGL//RCBK+uj4Ke6JbBFylKpaC+SxNE=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "bf972dc380f36a3bf83db052380e55f0eaa7dcb6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "bf972dc380f36a3bf83db052380e55f0eaa7dcb6",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixGL": "nixGL",
         "nixpkgs": "nixpkgs",
+        "nixpkgsK8s": "nixpkgsK8s",
         "vim-plug": "vim-plug",
         "zsh-syntax-highlighting": "zsh-syntax-highlighting"
       }

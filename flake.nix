@@ -11,16 +11,21 @@
         vim-plug.flake = false;
         zsh-syntax-highlighting.url = "github:zsh-users/zsh-syntax-highlighting/master";
         zsh-syntax-highlighting.flake = false;
+
+        nixpkgsK8s.url = "github:NixOS/nixpkgs/bf972dc380f36a3bf83db052380e55f0eaa7dcb6";
     };
     outputs = inputs@{ self, nixpkgs, home-manager, nixGL,
-        vim-plug, zsh-syntax-highlighting, ... }: {
+        vim-plug, zsh-syntax-highlighting, nixpkgsK8s, ... }: {
         homeConfigurations = let
             stateVersion = "21.11";
             genericConfiguration = { username, homeDirectory, system }:
+                let k8s = import nixpkgsK8s {
+                    inherit system;
+                }; in
                 home-manager.lib.homeManagerConfiguration {
                     inherit system homeDirectory username stateVersion;
                     extraSpecialArgs = {
-                        inherit nixGL vim-plug zsh-syntax-highlighting;
+                        inherit nixGL vim-plug zsh-syntax-highlighting k8s;
                     };
                     configuration = { config, pkgs, ... }: {
                         programs.home-manager.enable = true;
