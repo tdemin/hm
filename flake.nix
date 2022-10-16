@@ -17,23 +17,25 @@
     outputs = inputs@{ self, nixpkgs, home-manager, nixGL,
         vim-plug, zsh-syntax-highlighting, nixpkgsK8s, ... }: {
         homeConfigurations = let
-            stateVersion = "21.11";
+            stateVersion = "22.11";
             genericConfiguration = { username, homeDirectory, system }:
-                let k8s = import nixpkgsK8s {
-                    inherit system;
-                }; in
+                let k8s = import nixpkgsK8s { inherit system; }; in
                 home-manager.lib.homeManagerConfiguration {
-                    inherit system homeDirectory username stateVersion;
+                    pkgs = nixpkgs.legacyPackages.${system};
                     extraSpecialArgs = {
                         inherit nixGL vim-plug zsh-syntax-highlighting k8s;
                     };
-                    configuration = { config, pkgs, ... }: {
-                        programs.home-manager.enable = true;
-                        targets.genericLinux.enable = true;
-                        imports = [
-                            ./home.nix
-                        ];
-                    };
+                    modules = [
+                        ./home.nix
+                        {
+                            home = {
+                                inherit homeDirectory username stateVersion;
+                            };
+
+                            programs.home-manager.enable = true;
+                            targets.genericLinux.enable = true;
+                        }
+                    ];
                 };
             genericFedoraConfiguration = genericConfiguration {
                 username = "tdemin";
