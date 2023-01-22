@@ -76,7 +76,8 @@ in rec {
         starship
         texlive.combined.scheme-full
         tmux
-        vagrant
+        # FIXME: borked on nixpkgs from cfb43ad7b941d9c3606fb35d91228da7ebddbfc5 
+        # vagrant
         vim
         xclip
         xdotool
