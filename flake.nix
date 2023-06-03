@@ -13,7 +13,7 @@
     outputs = inputs@{ self, nixpkgs, home-manager,
         vim-plug, zsh-syntax-highlighting, ... }: {
         homeConfigurations = let
-            stateVersion = "22.11";
+            stateVersion = "23.05";
             genericConfiguration = { username, homeDirectory, system }:
                 home-manager.lib.homeManagerConfiguration {
                     pkgs = nixpkgs.legacyPackages.${system};
@@ -40,6 +40,7 @@
         in {
             "tdemin@haseul" = genericFedoraConfiguration;
             "tdemin@yeojin" = genericFedoraConfiguration;
+            "tdemin" = genericFedoraConfiguration;
             # append new computer configurations here
         };
     };
