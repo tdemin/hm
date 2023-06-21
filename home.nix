@@ -54,6 +54,7 @@ in rec {
         shellcheck
         shfmt
         socat
+        sops
         starship
         texlive.combined.scheme-full
         tmux
