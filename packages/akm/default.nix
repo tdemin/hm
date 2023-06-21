@@ -5,13 +5,13 @@
 
 stdenv.mkDerivation rec {
     pname = "akm";
-    version = "v0.1.0";
+    version = "v0.3.0";
 
     src = fetchFromGitHub {
         owner = "tdemin";
         repo = "akm";
-        rev = "4a2a38ca967478ef6ab20d9d1591160aa66ea9c7";
-        sha256 = sha256:2ihUCUMJzM6WVgDguKBsPktuvdE1VVqx3QQW2OcLW84=;
+        rev = "3eb495c561e15f4e653080e1986a419bd270d5f9";
+        sha256 = sha256:Rk81IlTjZ3O30Aj5q38XlrD7aiog3wHVxHq8TT9FQGw=;
     };
 
     nativeBuildInputs = [ makeWrapper ];
