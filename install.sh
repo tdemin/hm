@@ -30,7 +30,7 @@ build_activate_generation () {
         -o "$result_path" \
         "$hm_path#homeConfigurations.\"$USER@$HOSTNAME\".activationPackage"
     echo "Activating the initial home-manager generation..."
-    cmd sh "$result_path/activate"
+    cmd "$result_path/activate"
 }
 
 usage () {

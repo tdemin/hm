@@ -20,5 +20,10 @@ create_nix_tmpdir () {
 
 source_nix_profile () {
     # TODO: find out if .nix-profile can be located elsewhere
-    source "${HOME}/.nix-profile/etc/profile.d/nix.sh"
+    local nix_profile_location="${HOME}/.nix-profile/etc/profile.d/nix.sh"
+    if [ -f $nix_profile_location ]; then
+        source $nix_profile_location
+    else
+	echo "$nix_profile_location doesn't exist, likely not on Linux"
+    fi
 }

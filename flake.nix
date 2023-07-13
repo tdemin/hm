@@ -18,7 +18,7 @@
                 home-manager.lib.homeManagerConfiguration {
                     pkgs = nixpkgs.legacyPackages.${system};
                     extraSpecialArgs = {
-                        inherit vim-plug zsh-syntax-highlighting;
+                        inherit vim-plug zsh-syntax-highlighting system;
                     };
                     modules = [
                         ./home.nix
@@ -28,19 +28,26 @@
                             };
 
                             programs.home-manager.enable = true;
-                            targets.genericLinux.enable = true;
                         }
+                        (if nixpkgs.lib.hasInfix "linux" system
+                            then { targets.genericLinux.enable = true; }
+                            else {})
                     ];
                 };
-            genericFedoraConfiguration = genericConfiguration {
+            genericFedoraConfiguration = genericConfiguration rec {
                 username = "tdemin";
-                homeDirectory = "/home/tdemin";
+                homeDirectory = "/home/${username}";
                 system = "x86_64-linux";
+            };
+            genericMacConfiguration = genericConfiguration rec {
+                username = "tdemin";
+                homeDirectory = "/Users/${username}";
+                system = "aarch64-darwin";
             };
         in {
             "tdemin@haseul" = genericFedoraConfiguration;
             "tdemin@yeojin" = genericFedoraConfiguration;
-            "tdemin" = genericFedoraConfiguration;
+            "tdemin@Hyejoo.lan" = genericMacConfiguration;
             # append new computer configurations here
         };
     };

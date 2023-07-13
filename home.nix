@@ -1,5 +1,6 @@
 {
     pkgs,
+    system,
 
     vim-plug,
     zsh-syntax-highlighting,
@@ -11,6 +12,35 @@ let
         akm = pkgs.callPackage ./packages/akm {};
         rescrobbled = pkgs.callPackage ./packages/rescrobbled {};
     };
+    isMacOS = if pkgs.lib.hasInfix "darwin" system then true else false;
+    linuxSpecificPackages = pkgs: with pkgs; [
+        maim
+        minikube
+        rkdeveloptool
+        zathura
+    ] ++ [
+        # fonts
+        corefonts
+        dejavu_fonts
+        liberation_ttf
+        mplus-outline-fonts.osdnRelease
+        (nerdfonts.override { fonts = [
+            "DejaVuSansMono"
+            "DroidSansMono"
+            "FiraCode"
+            "RobotoMono"
+            "UbuntuMono"
+        ]; })
+        noto-fonts
+        noto-fonts-cjk
+        noto-fonts-extra
+        noto-fonts-emoji
+        open-sans
+        roboto
+        roboto-mono
+        source-sans-pro
+        ubuntu_font_family
+    ];
 in rec {
     manual.html.enable = true;
     manual.manpages.enable = true;
@@ -41,14 +71,11 @@ in rec {
         graphviz
         jq
         gomplate
-        maim
-        minikube
         minisign
         neovim
         patchelf
         restic
         ripgrep
-        rkdeveloptool
         rustup
         scc
         shellcheck
@@ -61,33 +88,10 @@ in rec {
         vim
         yarn
         yt-dlp
-        zathura
         zsh
     ] ++ [
-        # fonts
-        corefonts
-        dejavu_fonts
-        liberation_ttf
-        mplus-outline-fonts.osdnRelease
-        (nerdfonts.override { fonts = [
-            "DejaVuSansMono"
-            "DroidSansMono"
-            "FiraCode"
-            "RobotoMono"
-            "UbuntuMono"
-        ]; })
-        noto-fonts
-        noto-fonts-cjk
-        noto-fonts-extra
-        noto-fonts-emoji
-        open-sans
-        roboto
-        roboto-mono
-        source-sans-pro
-        ubuntu_font_family
-    ] ++ [
         overrides.akm
-    ];
+    ] ++ (if isMacOS then [] else linuxSpecificPackages);
     home.extraOutputsToInstall = [ "doc" ];
 
     fonts.fontconfig.enable = true;
