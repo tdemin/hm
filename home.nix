@@ -11,6 +11,7 @@ let
     overrides = {
         akm = pkgs.callPackage ./packages/akm {};
         rescrobbled = pkgs.callPackage ./packages/rescrobbled {};
+        corefonts = pkgs.callPackage ./packages/corefonts {};
     };
     isMacOS = if pkgs.lib.hasInfix "darwin" system then true else false;
     linuxSpecificPackages = pkgs: with pkgs; [
@@ -18,28 +19,6 @@ let
         minikube
         rkdeveloptool
         zathura
-    ] ++ [
-        # fonts
-        corefonts
-        dejavu_fonts
-        liberation_ttf
-        mplus-outline-fonts.osdnRelease
-        (nerdfonts.override { fonts = [
-            "DejaVuSansMono"
-            "DroidSansMono"
-            "FiraCode"
-            "RobotoMono"
-            "UbuntuMono"
-        ]; })
-        noto-fonts
-        noto-fonts-cjk
-        noto-fonts-extra
-        noto-fonts-emoji
-        open-sans
-        roboto
-        roboto-mono
-        source-sans-pro
-        ubuntu_font_family
     ];
 in rec {
     manual.html.enable = true;
@@ -90,7 +69,30 @@ in rec {
         yt-dlp
         zsh
     ] ++ [
+        # fonts
+        dejavu_fonts
+        liberation_ttf
+        mplus-outline-fonts.osdnRelease
+        (nerdfonts.override { fonts = [
+            "DejaVuSansMono"
+            "DroidSansMono"
+            "FiraCode"
+            "RobotoMono"
+            "UbuntuMono"
+        ]; })
+        noto-fonts
+        noto-fonts-cjk
+        noto-fonts-extra
+        noto-fonts-emoji
+        open-sans
+        roboto
+        roboto-mono
+        source-sans-pro
+        ubuntu_font_family
+    ] ++ [
+        # custom packages
         overrides.akm
+        overrides.corefonts
     ] ++ (if isMacOS then [] else linuxSpecificPackages);
     home.extraOutputsToInstall = [ "doc" ];
 
