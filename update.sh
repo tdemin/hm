@@ -16,7 +16,7 @@ update_flake () {
 
 update_home-manager () {
     echo "Rebuilding the profile with the new revision..."
-    cmd TMPDIR="$nix_tmpdir" home-manager switch --flake "$hm_path"
+    cmd TMPDIR="$nix_tmpdir" home-manager switch --flake "$hm_path#${USER}@${HOSTNAME}"
 }
 
 main () {

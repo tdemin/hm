@@ -47,7 +47,7 @@
         in {
             "tdemin@haseul" = genericFedoraConfiguration;
             "tdemin@yeojin" = genericFedoraConfiguration;
-            "tdemin@Hyejoo.lan" = genericMacConfiguration;
+            "tdemin@Hyejoo" = genericMacConfiguration;
             # append new computer configurations here
         };
     };
