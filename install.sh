@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-hm_path=$(dirname "$(realpath -s $0)")
+hm_path=$(dirname "$(realpath $0)")
 source "$hm_path/common.sh"
 
 install_nix () {

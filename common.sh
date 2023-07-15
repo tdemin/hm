@@ -27,3 +27,20 @@ source_nix_profile () {
 	echo "$nix_profile_location doesn't exist, likely not on Linux"
     fi
 }
+
+os_type=""
+
+detect_os_type () {
+    if [ -z "$os_type" ]; then
+        os_type=$(uname -s)
+    fi
+}
+
+realpath () {
+    detect_os_type
+    if [ $os_type -eq Darwin ]; then
+        command realpath $@
+    else
+        command realpath -q $@
+    fi
+}
