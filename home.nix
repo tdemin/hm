@@ -48,6 +48,7 @@ in rec {
         goreleaser
         go-task
         graphviz
+        ipcalc
         jq
         gomplate
         minisign
