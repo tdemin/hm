@@ -62,6 +62,7 @@ in rec {
         shfmt
         socat
         sops
+        sshpass
         starship
         texlive.combined.scheme-full
         tmux
