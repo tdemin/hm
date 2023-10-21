@@ -100,8 +100,6 @@ in rec {
 
     fonts.fontconfig.enable = true;
 
-    systemd.user.services = {};
-
     home.file.".local/share/nvim/site/autoload/plug.vim".source =
         "${vim-plug}/plug.vim";
     home.file.".local/share/zsh/zsh-syntax-highlighting".source =

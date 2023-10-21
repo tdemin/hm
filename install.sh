@@ -28,7 +28,7 @@ build_activate_generation () {
     echo "Building the profile..."
     cmd TMPDIR="$nix_tmpdir" nix build \
         -o "$result_path" \
-        "$hm_path#homeConfigurations.\"$USER@$HOSTNAME\".activationPackage"
+        "$hm_path#homeConfigurations.\"$USER@$host\".activationPackage"
     echo "Activating the initial home-manager generation..."
     cmd "$result_path/activate"
 }
