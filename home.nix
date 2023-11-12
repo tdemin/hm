@@ -49,6 +49,8 @@ in rec {
         go-task
         graphviz
         hledger
+        hledger-ui
+        hledger-web
         hugo
         ipcalc
         jq
