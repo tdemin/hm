@@ -41,16 +41,18 @@ in rec {
         direnv
         fd
         fzf
-        hugo
         gh
         go
         golangci-lint
+        gomplate
         goreleaser
         go-task
         graphviz
+        hledger
+        hugo
         ipcalc
         jq
-        gomplate
+        ledger
         minisign
         neovim
         patchelf
