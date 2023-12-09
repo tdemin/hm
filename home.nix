@@ -37,6 +37,7 @@ in rec {
         aria2
         asdf-vm
         bat
+        catt
         chezmoi
         direnv
         fd
