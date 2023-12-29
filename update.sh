@@ -11,7 +11,7 @@ usage () {
 
 update_flake () {
     echo "Updating flake..."
-    cmd nix flake update "$hm_path"
+    cmd nix flake update --flake "$hm_path"
 }
 
 update_home-manager () {
