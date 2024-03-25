@@ -31,10 +31,8 @@ in rec {
     home.packages = with pkgs; [
         # tools
         age
-        amfora
         ansible
         ansible-lint
-        aria2
         asdf-vm
         bat
         catt
@@ -43,8 +41,6 @@ in rec {
         fd
         fzf
         gh
-        go
-        golangci-lint
         gomplate
         goreleaser
         go-task
@@ -61,7 +57,6 @@ in rec {
         patchelf
         restic
         ripgrep
-        rustup
         scc
         shellcheck
         shfmt
